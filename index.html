@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monki Tasks 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <div>
+                <h1>Monki Tasks 🐒</h1>
+                <p>Organiza tu día y hazlo increíble 💜</p>
+            </div>
+
+            <div class="date" id="date"></div>
+        </header>
+
+        <main>
+
+            <!-- Mascota -->
+            <section class="mascot-card">
+                <div class="monkey">
+                    🐒
+                </div>
+
+                <div class="motivation">
+                    <h2 id="message">¡Tú puedes! 💜</h2>
+                    <p id="submessage">
+                        Vamos paso a paso. Hoy será un gran día.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Progreso -->
+            <section class="progress-card">
+
+                <div class="progress-info">
+                    <div>
+                        <h2>Tu progreso</h2>
+                        <p id="progressText">0 de 0 tareas completadas</p>
+                    </div>
+
+                    <span id="progressPercent">0%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+
+            </section>
+
+            <!-- Nueva tarea -->
+            <section class="task-form">
+
+                <h2>✨ Nueva tarea</h2>
+
+                <div class="inputs">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="¿Qué necesitas hacer?"
+                    >
+
+                    <select id="priority">
+                        <option value="baja">🟢 Baja</option>
+                        <option value="media">🟡 Media</option>
+                        <option value="alta">🔴 Alta</option>
+                    </select>
+
+                    <button id="addTask">
+                        + Agregar
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- Lista -->
+            <section class="tasks-section">
+
+                <div class="section-title">
+                    <h2>📋 Mis tareas</h2>
+
+                    <div class="filters">
+                        <button class="filter active" data-filter="all">
+                            Todas
+                        </button>
+
+                        <button class="filter" data-filter="pending">
+                            Pendientes
+                        </button>
+
+                        <button class="filter" data-filter="completed">
+                            Completadas
+                        </button>
+                    </div>
+                </div>
+
+                <div id="taskList"></div>
+
+                <div id="emptyMessage" class="empty">
+                    <div>🐒</div>
+                    <h3>No tienes tareas todavía</h3>
+                    <p>Agrega una tarea y comienza a organizarte.</p>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Hecho con 💜 para ayudarte a cumplir tus metas</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

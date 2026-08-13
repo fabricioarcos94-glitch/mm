@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4edff;
+    color: #40364d;
+    min-height: 100vh;
+}
+
+.app {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #7653a8;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #8d7a9f;
+}
+
+.date {
+    background: #e7d7ff;
+    color: #7653a8;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+/* MASCOTA */
+
+.mascot-card {
+    background: linear-gradient(135deg, #d9c1ff, #eee1ff);
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(118, 83, 168, 0.12);
+}
+
+.monkey {
+    width: 100px;
+    height: 100px;
+    background: #f8edff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    animation: bounce 2s infinite;
+}
+
+.motivation h2 {
+    color: #684496;
+    margin-bottom: 8px;
+}
+
+.motivation p {
+    color: #786582;
+}
+
+/* PROGRESO */
+
+.progress-card {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(100, 70, 130, 0.08);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progress-info h2 {
+    color: #604080;
+}
+
+.progress-info p {
+    color: #9586a0;
+    margin-top: 5px;
+}
+
+#progressPercent {
+    font-size: 25px;
+    font-weight: bold;
+    color: #8056ad;
+}
+
+.progress-bar {
+    height: 14px;
+    background: #eee5f8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #b58ae8, #8254b3);
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+/* FORMULARIO */
+
+.task-form {
+    background: white;
+    padding: 22px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(100, 70, 130, 0.08);
+}
+
+.task-form h2 {
+    color: #604080;
+    margin-bottom: 15px;
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+}
+
+input,
+select {
+    border: 2px solid #eadff5;
+    background: #faf7ff;
+    padding: 13px;
+    border-radius: 12px;
+    outline: none;
+    color: #51435e;
+    font-size: 15px;
+}
+
+input {
+    flex: 1;
+}
+
+input:focus,
+select:focus {
+    border-color: #b58ae8;
+}
+
+#addTask {
+    border: none;
+    background: #8b61bb;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#addTask:hover {
+    background: #744ba5;
+}
+
+/* TAREAS */
+
+.tasks-section {
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 5px 18px rgba(100, 70, 130, 0.08);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    color: #604080;
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+}
+
+.filter {
+    border: none;
+    background: #f1e8fa;
+    color: #725d82;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.filter.active {
+    background: #9b72c8;
+    color: white;
+}
+
+/* TARJETA DE TAREA */
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid #eee5f6;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(100, 70, 130, 0.08);
+}
+
+.check {
+    width: 23px;
+    height: 23px;
+    border-radius: 7px;
+    border: 2px solid #b28bd6;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task.completed .check {
+    background: #9b72c8;
+    position: relative;
+}
+
+.task.completed .check::after {
+    content: "✓";
+    color: white;
+    position: absolute;
+    left: 4px;
+    top: 0px;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task.completed .task-name {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.priority {
+    font-size: 12px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.priority.baja {
+    background: #ddf5df;
+    color: #41804a;
+}
+
+.priority.media {
+    background: #fff2c9;
+    color: #8d721e;
+}
+
+.priority.alta {
+    background: #ffdada;
+    color: #a34848;
+}
+
+.delete {
+    border: none;
+    background: #f6eaf9;
+    color: #a65c9d;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.delete:hover {
+    background: #efd7ed;
+}
+
+/* VACÍO */
+
+.empty {
+    text-align: center;
+    padding: 35px;
+    color: #9586a0;
+}
+
+.empty div {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.empty h3 {
+    color: #695777;
+    margin-bottom: 5px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #9786a5;
+}
+
+/* ANIMACIÓN */
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .app {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .mascot-card {
+        padding: 18px;
+    }
+
+    .monkey {
+        width: 75px;
+        height: 75px;
+        font-size: 45px;
+    }
+
+    .inputs {
+        flex-direction: column;
+    }
+
+    #addTask {
+        width: 100%;
+    }
+
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .filters {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+}
